@@ -1,12 +1,19 @@
+#!/bin/env python3
+
 import uuid
 import os
 import shutil
+import glob
 
 # Original file path
 original_file = "python.yml"  # Replace with your actual file name
 
 # Destination directory for cloes
 destination_dir = ".github/workflows/"  # You can change this if needed
+
+files = glob.glob(destination_dir+'*')
+for f in files:
+    os.remove(f)
 
 # Create the destination directory if it doesn't exist
 os.makedirs(destination_dir, exist_ok=True)
